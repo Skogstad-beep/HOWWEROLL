@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <title>UiA - HWR Rapport</title>
+    <style>
+body {
+  margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Bakgrunnsfarge bak navigasjonen */
+.topnav {
+  background-color: rgb(78, 101, 166);
+  overflow: hidden;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+}
+
+/* Endrer linkene i navigasjonen */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Endrer fargen når man holder over en link */
+.topnav a:hover {
+  text-decoration-line: underline;
+}
+
+/* Farge på aktiv side */
+.topnav a.active {
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+} 
+
+footer p {
+  text-align: center;
+}
+
+footer img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  text-align: left;
+  background-color: rgb(78, 101, 166);
+  height: 10px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 1%;
+  color: #fff;
+  font-size: 20px;
+}
+.headerText {
+  text-align: center;
+}
+        /* Søkefunksjon */
+        #searchText {
+				float: right;
+				padding: 6px;
+				border: none;
+				font-size: 17px;
+        position: absolute; 
+        top: 25px; 
+        right: 363px;
+			}
+
+			#searchBtn {
+				float: right;
+				border: none;
+				background-color: rgb(53, 70, 119);
+				font-size: 16px;
+				cursor: pointer;
+				height: 31.5px;
+				width: 50px;
+				border: none;
+				color: white;
+				align-items: center;
+        position: absolute; 
+        top: 25px; 
+        right: 310px;
+			}
+
+			#searchBtn:hover {
+				background-color: rgb(60, 78, 125);
+				color: #fff;
+      }
+      .popup-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn {
+        background: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 30px;
+        color: rgb(255, 255, 255);
+        position: absolute; 
+        top: 0px; 
+        right: 0px;
+      }
+
+      .btn:hover {
+        text-decoration: underline;
+      }
+      .popup {
+        width: 400px;
+        background: rgb(78, 101, 166);
+        border-radius: 6px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        text-align: center;
+        padding: 0 30px 30px;
+        color: white;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .open-popup {
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .popup img {
+        width: 100px;
+        margin-top: -50px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+      }
+      
+      .popup h2 {
+        font-size: 38px;
+        font-weight: 500;
+        margin: 30px 0 10px;
+      }
+      
+      .popup a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .popup a:hover {
+        text-decoration: underline;
+      }
+
+      .popup button {
+        width: 100%;
+        margin-top 50px;
+        padding: 10px 0;
+        background: #6fd649;
+        color: #fff;
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+      }
+      .popup button:hover {
+        background: #6cbc4f;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: white;
+        text-align: left;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+    table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;    
+    }
+
+    table thead tr {
+    background-color: rgb(78, 101, 166);
+    color: #ffffff;
+    text-align: left;
+    }
+
+    table th,
+    table td {
+    padding: 12px 15px;
+    }
+
+    table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    }
+
+    table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    }
+
+    table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(78, 101, 166);
+    }
+
+    table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+    }
+    </style>
+
+</head>
+<body>
+  <div class="header">UiA Prosjekt ⇢ Felles-skapet</div>
+  <div class="topnav">
+    <a href="index.html">Forside</a>
+    <a href="howweroll.html">HowWeRoll</a>
+    <a class="active" href="hwr-report.html">HWR Rapport</a>
+    <a href="ourgroup.html">Om oss</a>
+    <a href="https://github.com/Skogstad-beep/HOWWEROLL">GitHub HWR</a>
+    <input type="button" id="searchBtn" value="Søk" onclick="alertSearch()">
+    <input type="text" id="searchText" placeholder="Søk...">
+  </div>
+
+  <div class="headerText">
+  <h2>HWR Rapport</h2>
+  <p>Visualiser dine data fra HowWeRoll</p>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Fornavn</th>
+      <th>Etternavn</th>
+      <th>E-post</th>
+      <th>Alder</th>
+      <th>Land</th>
+      <th>Kjønn</th>
+      <th>Mat</th>
+      <th>Koding (%)</th>
+      <th>Type menneske (%)</th>
+      <th>Alkoholvaner (%)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="popup-container">
+    <button type="submit" class="btn" onclick="openPopup()">Credits</button>
+    <div class="popup" id="popup">
+      <img src="images/veriMark.png">
+      <h2>Takk!</h2>
+      <p><a href="https://skogstad-beep.github.io/">Henrik</a>, Lars, Christian, Joakim & Tobias</p>
+      <p>Made with ❤️️</p>
+      <button type="button" onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <footer>
+    <a href="privacy.html">Personvern</a>
+    <br>
+    <a href="cookies.html">Informasjonskapsler</a>
+    <p>Opphavsrett &copy; 2022 <br> <b>Utdanningsprosjekt</b></p>
+    <img src="images/footerlogo.png" width="250px" id="footerlogo">
+  </footer>
+
+  <script>
+        let mineData = null;
+        // let urlHwrData = "https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json";
+        fetch("https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json")
+            .then((response) => response.json())
+            .then((data) => {
+                mineData = data;
+                let table = document.getElementsByTagName('table');
+                let tbody = table[0].children[1];
+                tbody.children[0].children[0].innerText = mineData['fname'];
+                tbody.children[0].children[1].innerText = mineData['lname'];
+                tbody.children[0].children[2].innerText = mineData['email'];
+                tbody.children[0].children[3].innerText = mineData['age'];
+                tbody.children[0].children[4].innerText = mineData['country'];
+                tbody.children[0].children[5].innerText = mineData['gender'];
+                tbody.children[0].children[6].innerText = mineData['food'];
+                tbody.children[0].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
+                tbody.children[0].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
+                tbody.children[0].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
+             });
+  </script>
+
+<script>
+  function alertSearch() {
+alert("Kun en placeholder.")
+}
+</script>
+
+<script>
+  let popup = document.getElementById("popup");
+
+  function openPopup(){
+    popup.classList.add("open-popup");
+  }
+
+  function closePopup(){
+    popup.classList.remove("open-popup");
+  }
+</script>
+</body>
+</html>
