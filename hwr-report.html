@@ -287,6 +287,18 @@ footer img {
       <td></td>
       <td></td>
     </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     </tbody>
   </table>
 
@@ -328,6 +340,24 @@ footer img {
                 tbody.children[0].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
                 tbody.children[0].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
                 tbody.children[0].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
+             });
+
+             fetch("https://bacit.info/hwr/20221107165823-eb0fce0f43c5ecc0f928dbcdf00897a0.json")
+            .then((response) => response.json())
+            .then((data) => {
+                mineData = data;
+                let table = document.getElementsByTagName('table');
+                let tbody = table[0].children[1];
+                tbody.children[1].children[0].innerText = mineData['fname'];
+                tbody.children[1].children[1].innerText = mineData['lname'];
+                tbody.children[1].children[2].innerText = mineData['email'];
+                tbody.children[1].children[3].innerText = mineData['age'];
+                tbody.children[1].children[4].innerText = mineData['country'];
+                tbody.children[1].children[5].innerText = mineData['gender'];
+                tbody.children[1].children[6].innerText = mineData['food'];
+                tbody.children[1].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
+                tbody.children[1].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
+                tbody.children[1].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
              });
   </script>
 
