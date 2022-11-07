@@ -72,9 +72,6 @@ footer img {
   color: #fff;
   font-size: 20px;
 }
-.hwr-form {
-  text-align: center;
-}
 .id {
   text-align: center;
 }
@@ -206,6 +203,40 @@ footer img {
       footer a:hover {
         text-decoration: underline;
       }
+
+            /* Style inputs with type="text", select elements and textareas */
+      .hwr-form input[type=text],[type=number], select, textarea {
+        width: 10%; /* Full width */
+        padding: 12px; /* Some padding */ 
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 6px; /* Bottom margin */
+        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+       }
+        /* Style the submit button with a specific background color etc */
+        .hwr-form #btnLagre {
+        background-color: rgb(78, 101, 166);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+      /* When moving the mouse over the submit button, add a darker green color */
+      .hwr-form #btnLagre:hover {
+        background-color: rgb(53, 70, 119);
+       }
+
+       /* Add a background color and some padding around the form */
+        .hwr-form {
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+        }
+
     </style>
 
 </head>
@@ -226,7 +257,7 @@ footer img {
     <p><label for="fname">Fornavn</label>
     <input type="text" name="fname" placeholder="Fornavn" class="fnameLabel" required /></p>
     <p><label for="lname">Etternavn</label>
-      <input type="text" name="lname" placeholder="Etternavn" class="enameLabel" required /></p>
+    <input type="text" name="lname" placeholder="Etternavn" class="enameLabel" required /></p>
     <p><label for="email">E-post</label>
     <input type="text" name="email" placeholder="E-post" class="emailLabel" required /></p>
     <p><label for="age">Alder</label>
