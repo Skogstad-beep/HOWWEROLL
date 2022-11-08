@@ -237,7 +237,20 @@ footer img {
 
     table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: rgb(78, 101, 166);
+    }
+
+    #previewCanvas {
+      text-align: center;
+    }
+
+    .data {
+      text-align: center;
+    }
+
+    #myCanvas {
+      display: flex;
+      margin: auto;
     }
     </style>
 
@@ -301,6 +314,10 @@ footer img {
     </tr>
     </tbody>
   </table>
+  
+  <br><br>
+
+  <canvas id="myCanvas" width="1000" height="1000"></canvas>
 
   <div class="popup-container">
     <button type="submit" class="btn" onclick="openPopup()">Credits</button>
@@ -377,6 +394,113 @@ alert("Kun en placeholder.")
   function closePopup(){
     popup.classList.remove("open-popup");
   }
+</script>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+// Bakgrunn
+ctx.fillStyle = "rgb(78, 101, 166";
+ctx.fillRect(0, 0, 1000, 1000);
+
+// Overskrift
+ctx.font = "30px Arial";
+ctx.fillStyle = "white";
+ctx.fillText("Visualisering av HowWeRoll data", 300, 50);
+
+// Streker mellom parametere
+ctx.beginPath();
+ctx.moveTo(300, 150);
+ctx.lineTo(700, 150);
+ctx.strokeStyle = "white";
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(300, 250);
+ctx.lineTo(700, 250);
+ctx.strokeStyle = "white";
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(300, 350);
+ctx.lineTo(700, 350);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+// Navn på parametere
+ctx.fillText("Noob", 200, 160)
+ctx.fillText("Kodeguru", 740, 160)
+
+ctx.fillText("A-menneske", 110, 260)
+ctx.fillText("B-menneske", 740, 260)
+
+ctx.fillText("Avholds", 170, 360)
+ctx.fillText("Alkoholiker", 740, 360)
+
+// Navn på deltakere
+ctx.fillText("Henrik Skogstad", 400, 500)
+ctx.fillText("Lars Utklev", 400, 550)
+ctx.fillText("Christian Åbyholm", 400, 600)
+ctx.fillText("Joakim L. Pedersen", 400, 650)
+ctx.fillText("Tobias Funes", 400, 700)
+
+// Tegne sirkler ved siden av deltakere
+var X = 370;
+var Y = 490;
+var R = 10;
+ctx.beginPath();
+ctx.arc(X, Y, R, 0, 2 * Math.PI);
+ctx.fillStyle = "red";
+ctx.fill();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "white";
+ctx.stroke();
+
+var X = 370;
+var Y = 540;
+var R = 10;
+ctx.beginPath();
+ctx.arc(X, Y, R, 0, 2 * Math.PI);
+ctx.fillStyle = "green";
+ctx.fill();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "white";
+ctx.stroke();
+
+var X = 370;
+var Y = 590;
+var R = 10;
+ctx.beginPath();
+ctx.arc(X, Y, R, 0, 2 * Math.PI);
+ctx.fillStyle = "orange";
+ctx.fill();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "white";
+ctx.stroke();
+
+
+var X = 370;
+var Y = 640;
+var R = 10;
+ctx.beginPath();
+ctx.arc(X, Y, R, 0, 2 * Math.PI);
+ctx.fillStyle = "pink";
+ctx.fill();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "white";
+ctx.stroke();
+
+var X = 370;
+var Y = 690;
+var R = 10;
+ctx.beginPath();
+ctx.arc(X, Y, R, 0, 2 * Math.PI);
+ctx.fillStyle = "blue";
+ctx.fill();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "white";
+ctx.stroke();
 </script>
 </body>
 </html>
