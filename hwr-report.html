@@ -376,6 +376,24 @@ footer img {
                 tbody.children[1].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
                 tbody.children[1].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
              });
+
+             fetch("https://bacit.info/hwr/20221109152303-b53dfc52fed4d9986337c0d08359c8fe.json")
+            .then((response) => response.json())
+            .then((data) => {
+                mineData = data;
+                let table = document.getElementsByTagName('table');
+                let tbody = table[0].children[1];
+                tbody.children[2].children[0].innerText = mineData['fname'];
+                tbody.children[2].children[1].innerText = mineData['lname'];
+                tbody.children[2].children[2].innerText = mineData['email'];
+                tbody.children[2].children[3].innerText = mineData['age'];
+                tbody.children[2].children[4].innerText = mineData['country'];
+                tbody.children[2].children[5].innerText = mineData['gender'];
+                tbody.children[2].children[6].innerText = mineData['food'];
+                tbody.children[2].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
+                tbody.children[2].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
+                tbody.children[2].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
+             });
   </script>
 
 <script>
