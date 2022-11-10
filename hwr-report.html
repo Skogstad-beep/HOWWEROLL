@@ -248,6 +248,35 @@ footer img {
       text-align: center;
     }
 
+    #info {
+      background-color: rgb(78, 101, 166);
+      color: white;
+      width: 200px;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    #btnData {
+        width: 120px;
+        margin-top 50px;
+        padding: 10px 0;
+        background: #6fd649;
+        color: #fff;
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+      }
+
+      #btnData:hover {
+        background: #6cbc4f;
+      }
+
     #myCanvas {
       display: flex;
       margin: auto;
@@ -269,7 +298,7 @@ footer img {
 
   <div class="headerText">
   <h2>HWR Rapport</h2>
-  <p>Visualiser dine data fra HowWeRoll</p>
+  <p>Dine data fra HowWeRoll kan visualiseres både i tabell og i et canvas-element.</p>
   </div>
 
   <table>
@@ -329,8 +358,20 @@ footer img {
   
   <br><br>
 
-  <canvas id="myCanvas" width="1000" height="1000"></canvas>
-
+  <div class="data">
+    <h2>Visualiser dine data</h2>
+    <b>Lim inn ID</b> <br> <input type="text" value="" id="timetrxidPASTE" style="width: 350px">
+    <div class="results" id="results">
+        <h2>Data i json-format:</h2>
+        <pre class="data2"></pre>
+        <input type="button" id="btnData" value="Visualiser">
+        <br><br>
+    </div>
+    <div id="info"></div>
+  </div>
+    <br><br>
+    <canvas id="myCanvas" width="1000" height="800"></canvas>
+  
   <div class="popup-container">
     <button type="submit" class="btn" onclick="openPopup()">Credits</button>
     <div class="popup" id="popup">
@@ -353,7 +394,7 @@ footer img {
   <script>
         let mineData = null;
         // let urlHwrData = "https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json";
-        fetch("https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json")
+            fetch("https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json")
             .then((response) => response.json())
             .then((data) => {
                 mineData = data;
@@ -427,6 +468,12 @@ alert("Kun en placeholder.")
 </script>
 
 <script>
+
+// DataID-Innfelt 
+var timetrxidPASTE=document.getElementById("timetrxidPASTE");
+var btnData=document.getElementById("btnData");
+const results = document.querySelector('.results pre');
+
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
@@ -472,7 +519,7 @@ ctx.fillText("Alkoholiker", 740, 360)
 ctx.fillText("Henrik Skogstad", 400, 500)
 ctx.fillText("Lars Utklev", 400, 550)
 ctx.fillText("Christian Åbyholm", 400, 600)
-ctx.fillText("Joakim L. Pedersen", 400, 650)
+ctx.fillText("Joakim Pedersen", 400, 650)
 ctx.fillText("Tobias Funes", 400, 700)
 
 // Tegne sirkler ved siden av deltakere
@@ -486,6 +533,7 @@ ctx.fill();
 ctx.lineWidth = 2;
 ctx.strokeStyle = "white";
 ctx.stroke();
+ctx.closePath();
 
 var X = 370;
 var Y = 540;
@@ -497,6 +545,7 @@ ctx.fill();
 ctx.lineWidth = 2;
 ctx.strokeStyle = "white";
 ctx.stroke();
+ctx.closePath();
 
 var X = 370;
 var Y = 590;
@@ -508,7 +557,7 @@ ctx.fill();
 ctx.lineWidth = 2;
 ctx.strokeStyle = "white";
 ctx.stroke();
-
+ctx.closePath();
 
 var X = 370;
 var Y = 640;
@@ -531,6 +580,199 @@ ctx.fill();
 ctx.lineWidth = 2;
 ctx.strokeStyle = "white";
 ctx.stroke();
+
+// Henrik sine data
+    fetch("https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json", {cache: 'no-cache'})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        var X = 300 + parseInt(data.firstSlider, 10)*4;
+        var Y = 150;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.secondSlider, 10)*4;
+        var Y = 250;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.thirdSlider, 10)*4;
+        var Y = 350;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+    });
+
+    // Joakim sine data
+    fetch("https://bacit.info/hwr/20221107165823-eb0fce0f43c5ecc0f928dbcdf00897a0.json", {cache: 'no-cache'})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        var X = 300 + parseInt(data.firstSlider, 10)*4;
+        var Y = 150;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "pink";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.secondSlider, 10)*4;
+        var Y = 250;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "pink";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.thirdSlider, 10)*4;
+        var Y = 350;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false)*4;
+        ctx.fillStyle = "pink";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+    });
+
+    // Christian sine data
+    fetch("https://bacit.info/hwr/20221109191706-01a270bcb4b789546f52e5e487033465.json", {cache: 'no-cache'})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        var X = 300 + parseInt(data.firstSlider, 10)*4;
+        var Y = 150;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+        
+        var X = 300 + parseInt(data.secondSlider, 10)*4;
+        var Y = 250;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.thirdSlider, 10)*4;
+        var Y = 350;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+    });
+
+    // Funksjon til knapp for å legge til ny data
+
+    btnData.onclick=function () {
+
+  // Når noen limer inn en ID i input-feltet legges det til ny data
+        fetch("https://bacit.info/hwr/" + timetrxidPASTE.value + ".json", {cache: 'no-cache'})
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                results.innerText = JSON.stringify(data, null, 2);
+                document.querySelector("#info").innerText = "- Info om deg -" + "\nFornavn: " + data.fname + "\nEtternavn: " + data.lname + "\nE-post: " + data.email + "\nAlder: " + data.age;
+
+                ctx.fillStyle = "white";
+                ctx.fillText(data.fname + " " + data.lname, 400, 750,);
+                var X = 370;
+                var Y = 740;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.firstSlider, 10)*4;
+                var Y = 150;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.secondSlider, 10)*4;
+                var Y = 250;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.thirdSlider, 10)*4;
+                var Y = 350;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+            });
+    }
 </script>
 </body>
 </html>
