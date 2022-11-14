@@ -280,6 +280,7 @@ footer img {
     #myCanvas {
       display: flex;
       margin: auto;
+      background: rgb(78, 101, 166);
     }
     </style>
 
@@ -288,7 +289,7 @@ footer img {
   <div class="header">UiA Prosjekt ⇢ Felles-skapet</div>
   <div class="topnav">
     <a href="index.html">Forside</a>
-    <a href="howweroll.html">HowWeRoll</a>
+    <a href="howweroll.html">HWR Skjema</a>
     <a class="active" href="hwr-report.html">HWR Rapport</a>
     <a href="ourgroup.html">Om oss</a>
     <a href="https://github.com/Skogstad-beep/HOWWEROLL">GitHub HWR</a>
@@ -311,9 +312,17 @@ footer img {
       <th>Land</th>
       <th>Kjønn</th>
       <th>Mat</th>
-      <th>Koding (%)</th>
-      <th>Type menneske (%)</th>
-      <th>Alkoholvaner (%)</th>
+      <th>moNa</th>
+      <th>alTe</th>
+      <th>alPo</th>
+      <th>snVi</th>
+      <th>snTe</th>
+      <th>plFo</th>
+      <th>riTe</th>
+      <th>faFl</th>
+      <th>noKo</th>
+      <th>aB</th>
+      <th>avAlko</th>
     </tr>
     </thead>
     <tbody>
@@ -328,6 +337,14 @@ footer img {
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td></td>
@@ -340,8 +357,24 @@ footer img {
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -370,7 +403,7 @@ footer img {
     <div id="info"></div>
   </div>
     <br><br>
-    <canvas id="myCanvas" width="1000" height="800"></canvas>
+    <canvas id="myCanvas" width="1000" height="1300"></canvas>
   
   <div class="popup-container">
     <button type="submit" class="btn" onclick="openPopup()">Credits</button>
@@ -394,7 +427,7 @@ footer img {
   <script>
         let mineData = null;
         // let urlHwrData = "https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json";
-            fetch("https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json")
+            fetch("https://bacit.info/hwr/20221114135337-487061a046a7659e7c0b17a5ac794af1.json")
             .then((response) => response.json())
             .then((data) => {
                 mineData = data;
@@ -407,12 +440,20 @@ footer img {
                 tbody.children[0].children[4].innerText = mineData['country'];
                 tbody.children[0].children[5].innerText = mineData['gender'];
                 tbody.children[0].children[6].innerText = mineData['food'];
-                tbody.children[0].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
-                tbody.children[0].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
-                tbody.children[0].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
+                tbody.children[0].children[7].innerText = mineData['moNa'] + "%";
+                tbody.children[0].children[8].innerText = mineData['alTe'] + "%";
+                tbody.children[0].children[9].innerText = mineData['alPo'] + "%";
+                tbody.children[0].children[10].innerText = mineData['snVi'] + "%";
+                tbody.children[0].children[11].innerText = mineData['snTe'] + "%";
+                tbody.children[0].children[12].innerText = mineData['plFo'] + "%";
+                tbody.children[0].children[13].innerText = mineData['riTe'] + "%";
+                tbody.children[0].children[14].innerText = mineData['faFl'] + "%";
+                tbody.children[0].children[15].innerText = mineData['noKo'] + "%";
+                tbody.children[0].children[16].innerText = mineData['aB'] + "%";
+                tbody.children[0].children[17].innerText = mineData['avAlko'] + "%";
              });
 
-             fetch("https://bacit.info/hwr/20221107165823-eb0fce0f43c5ecc0f928dbcdf00897a0.json")
+             fetch("https://bacit.info/hwr/20221114145027-fdce5b07a9015eba61002c5df0561bcb.json")
             .then((response) => response.json())
             .then((data) => {
                 mineData = data;
@@ -425,12 +466,20 @@ footer img {
                 tbody.children[1].children[4].innerText = mineData['country'];
                 tbody.children[1].children[5].innerText = mineData['gender'];
                 tbody.children[1].children[6].innerText = mineData['food'];
-                tbody.children[1].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
-                tbody.children[1].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
-                tbody.children[1].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
+                tbody.children[1].children[7].innerText = mineData['moNa'] + "%";
+                tbody.children[1].children[8].innerText = mineData['alTe'] + "%";
+                tbody.children[1].children[9].innerText = mineData['alPo'] + "%";
+                tbody.children[1].children[10].innerText = mineData['snVi'] + "%";
+                tbody.children[1].children[11].innerText = mineData['snTe'] + "%";
+                tbody.children[1].children[12].innerText = mineData['plFo'] + "%";
+                tbody.children[1].children[13].innerText = mineData['riTe'] + "%";
+                tbody.children[1].children[14].innerText = mineData['faFl'] + "%";
+                tbody.children[1].children[15].innerText = mineData['noKo'] + "%";
+                tbody.children[1].children[16].innerText = mineData['aB'] + "%";
+                tbody.children[1].children[17].innerText = mineData['avAlko'] + "%";
              });
 
-             fetch("https://bacit.info/hwr/20221109152303-b53dfc52fed4d9986337c0d08359c8fe.json")
+             fetch("https://bacit.info/hwr/20221114150727-1d3261c7fae3e5427402e08e4068c12a.json")
             .then((response) => response.json())
             .then((data) => {
                 mineData = data;
@@ -443,9 +492,17 @@ footer img {
                 tbody.children[2].children[4].innerText = mineData['country'];
                 tbody.children[2].children[5].innerText = mineData['gender'];
                 tbody.children[2].children[6].innerText = mineData['food'];
-                tbody.children[2].children[7].innerText = mineData['firstSlider'] + "% flink i koding";
-                tbody.children[2].children[8].innerText = mineData['secondSlider'] + "% b-menneske";
-                tbody.children[2].children[9].innerText = mineData['thirdSlider'] + "% alkoholiker";
+                tbody.children[2].children[7].innerText = mineData['moNa'] + "%";
+                tbody.children[2].children[8].innerText = mineData['alTe'] + "%";
+                tbody.children[2].children[9].innerText = mineData['alPo'] + "%";
+                tbody.children[2].children[10].innerText = mineData['snVi'] + "%";
+                tbody.children[2].children[11].innerText = mineData['snTe'] + "%";
+                tbody.children[2].children[12].innerText = mineData['plFo'] + "%";
+                tbody.children[2].children[13].innerText = mineData['riTe'] + "%";
+                tbody.children[2].children[14].innerText = mineData['faFl'] + "%";
+                tbody.children[2].children[15].innerText = mineData['noKo'] + "%";
+                tbody.children[2].children[16].innerText = mineData['aB'] + "%";
+                tbody.children[2].children[17].innerText = mineData['avAlko'] + "%";
              });
   </script>
 
@@ -482,9 +539,9 @@ ctx.fillStyle = "rgb(78, 101, 166";
 ctx.fillRect(0, 0, 1000, 1000);
 
 // Overskrift
-ctx.font = "30px Arial";
+ctx.font = "20px Arial";
 ctx.fillStyle = "white";
-ctx.fillText("Visualisering av HowWeRoll data", 300, 50);
+ctx.fillText("Visualisering av HowWeRoll data", 350, 50);
 
 // Streker mellom parametere
 ctx.beginPath();
@@ -505,26 +562,99 @@ ctx.lineTo(700, 350);
 ctx.strokeStyle = "white";
 ctx.stroke()
 
+ctx.beginPath();
+ctx.moveTo(300, 450);
+ctx.lineTo(700, 450);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 550);
+ctx.lineTo(700, 550);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 650);
+ctx.lineTo(700, 650);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 750);
+ctx.lineTo(700, 750);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 850);
+ctx.lineTo(700, 850);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 950);
+ctx.lineTo(700, 950);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 1050);
+ctx.lineTo(700, 1050);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
+ctx.beginPath();
+ctx.moveTo(300, 1150);
+ctx.lineTo(700, 1150);
+ctx.strokeStyle = "white";
+ctx.stroke()
+
 // Navn på parametere
-ctx.fillText("Noob", 200, 160)
-ctx.fillText("Kodeguru", 740, 160)
+ctx.fillText("Morgenfugl", 170, 160)
+ctx.fillText("Natteravn", 740, 160)
 
-ctx.fillText("A-menneske", 110, 260)
-ctx.fillText("B-menneske", 740, 260)
+ctx.fillText("Alene", 170, 260)
+ctx.fillText("Team", 740, 260)
 
-ctx.fillText("Avholds", 170, 360)
-ctx.fillText("Alkoholiker", 740, 360)
+ctx.fillText("Må vite alt", 170, 360)
+ctx.fillText("Kom til poenget", 740, 360)
+
+ctx.fillText("Snakke ut", 170, 460)
+ctx.fillText("Komme seg videre", 740, 460)
+
+ctx.fillText("Snakke før man tenker", 60, 560)
+ctx.fillText("Tenke før man snakker", 740, 560)
+
+ctx.fillText("Planlegge", 170, 660)
+ctx.fillText("Forstyrr meg", 740, 660)
+
+ctx.fillText("Ringe", 170, 760)
+ctx.fillText("Tekste", 740, 760)
+
+ctx.fillText("Fast", 170, 860)
+ctx.fillText("Fleksibel", 740, 860)
+
+ctx.fillText("Noob", 170, 960)
+ctx.fillText("Kodeguru", 740, 960)
+
+ctx.fillText("A-menneske", 170, 1060)
+ctx.fillText("B-menneske", 740, 1060)
+
+ctx.fillText("Avholds", 170, 1160)
+ctx.fillText("Alkoholiker", 740, 1160)
+
 
 // Navn på deltakere
-ctx.fillText("Henrik Skogstad", 400, 500)
-ctx.fillText("Lars Utklev", 400, 550)
-ctx.fillText("Christian Åbyholm", 400, 600)
-ctx.fillText("Joakim Pedersen", 400, 650)
-ctx.fillText("Tobias Funes", 400, 700)
+ctx.fillText("Henrik", 48, 37)
+ctx.fillText("Lars", 48, 77)
+ctx.fillText("Christian", 48, 117)
+ctx.fillText("Joakim", 48, 157)
+ctx.fillText("Tobias", 48, 197)
 
 // Tegne sirkler ved siden av deltakere
-var X = 370;
-var Y = 490;
+var X = 30;
+var Y = 30;
 var R = 10;
 ctx.beginPath();
 ctx.arc(X, Y, R, 0, 2 * Math.PI);
@@ -535,8 +665,8 @@ ctx.strokeStyle = "white";
 ctx.stroke();
 ctx.closePath();
 
-var X = 370;
-var Y = 540;
+var X = 30;
+var Y = 70;
 var R = 10;
 ctx.beginPath();
 ctx.arc(X, Y, R, 0, 2 * Math.PI);
@@ -547,8 +677,8 @@ ctx.strokeStyle = "white";
 ctx.stroke();
 ctx.closePath();
 
-var X = 370;
-var Y = 590;
+var X = 30;
+var Y = 110;
 var R = 10;
 ctx.beginPath();
 ctx.arc(X, Y, R, 0, 2 * Math.PI);
@@ -559,8 +689,8 @@ ctx.strokeStyle = "white";
 ctx.stroke();
 ctx.closePath();
 
-var X = 370;
-var Y = 640;
+var X = 30;
+var Y = 150;
 var R = 10;
 ctx.beginPath();
 ctx.arc(X, Y, R, 0, 2 * Math.PI);
@@ -570,8 +700,8 @@ ctx.lineWidth = 2;
 ctx.strokeStyle = "white";
 ctx.stroke();
 
-var X = 370;
-var Y = 690;
+var X = 30;
+var Y = 190;
 var R = 10;
 ctx.beginPath();
 ctx.arc(X, Y, R, 0, 2 * Math.PI);
@@ -582,12 +712,12 @@ ctx.strokeStyle = "white";
 ctx.stroke();
 
 // Henrik sine data
-    fetch("https://bacit.info/hwr/20221107160502-afcaf1bfe6c4b42d51194007c79fbe48.json", {cache: 'no-cache'})
+    fetch("https://bacit.info/hwr/20221114135337-487061a046a7659e7c0b17a5ac794af1.json", {cache: 'no-cache'})
     .then(response => response.json())
     .then(data => {
         console.log(data);
 
-        var X = 300 + parseInt(data.firstSlider, 10)*4;
+        var X = 300 + parseInt(data.moNa, 10)*4;
         var Y = 150;
         var R = 10;
         ctx.beginPath();
@@ -599,7 +729,7 @@ ctx.stroke();
         ctx.stroke();
         ctx.closePath();
 
-        var X = 300 + parseInt(data.secondSlider, 10)*4;
+        var X = 300 + parseInt(data.alTe, 10)*4;
         var Y = 250;
         var R = 10;
         ctx.beginPath();
@@ -611,8 +741,104 @@ ctx.stroke();
         ctx.stroke();
         ctx.closePath();
 
-        var X = 300 + parseInt(data.thirdSlider, 10)*4;
+        var X = 300 + parseInt(data.alPo, 10)*4;
         var Y = 350;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.snVi, 10)*4;
+        var Y = 450;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.snTe, 10)*4;
+        var Y = 550;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.plFo, 10)*4;
+        var Y = 650;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.riTe, 10)*4;
+        var Y = 750;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.faFl, 10)*4;
+        var Y = 850;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.noKo, 10)*4;
+        var Y = 950;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.aB, 10)*4;
+        var Y = 1050;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.avAlko, 10)*4;
+        var Y = 1150;
         var R = 10;
         ctx.beginPath();
         ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
@@ -624,42 +850,138 @@ ctx.stroke();
         ctx.closePath();
     });
 
-    // Joakim sine data
-    fetch("https://bacit.info/hwr/20221107165823-eb0fce0f43c5ecc0f928dbcdf00897a0.json", {cache: 'no-cache'})
+    // Lars sine data
+    fetch("https://bacit.info/hwr/20221114145027-fdce5b07a9015eba61002c5df0561bcb.json", {cache: 'no-cache'})
     .then(response => response.json())
     .then(data => {
         console.log(data);
 
-        var X = 300 + parseInt(data.firstSlider, 10)*4;
+        var X = 300 + parseInt(data.moNa, 10)*4;
         var Y = 150;
         var R = 10;
         ctx.beginPath();
         ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
-        ctx.fillStyle = "pink";
+        ctx.fillStyle = "green";
         ctx.fill();
         ctx.lineWidth = 2;
         ctx.strokeStyle = "white";
         ctx.stroke();
         ctx.closePath();
 
-        var X = 300 + parseInt(data.secondSlider, 10)*4;
+        var X = 300 + parseInt(data.alTe, 10)*4;
         var Y = 250;
         var R = 10;
         ctx.beginPath();
         ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
-        ctx.fillStyle = "pink";
+        ctx.fillStyle = "green";
         ctx.fill();
         ctx.lineWidth = 2;
         ctx.strokeStyle = "white";
         ctx.stroke();
         ctx.closePath();
 
-        var X = 300 + parseInt(data.thirdSlider, 10)*4;
+        var X = 300 + parseInt(data.alPo, 10)*4;
         var Y = 350;
         var R = 10;
         ctx.beginPath();
-        ctx.arc(X, Y, R, 0, 2 * Math.PI, false)*4;
-        ctx.fillStyle = "pink";
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.snVi, 10)*4;
+        var Y = 450;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.snTe, 10)*4;
+        var Y = 550;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.plFo, 10)*4;
+        var Y = 650;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.riTe, 10)*4;
+        var Y = 750;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.faFl, 10)*4;
+        var Y = 850;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.noKo, 10)*4;
+        var Y = 950;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.aB, 10)*4;
+        var Y = 1050;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.avAlko, 10)*4;
+        var Y = 1150;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "green";
         ctx.fill();
         ctx.lineWidth = 2;
         ctx.strokeStyle = "white";
@@ -668,12 +990,12 @@ ctx.stroke();
     });
 
     // Christian sine data
-    fetch("https://bacit.info/hwr/20221109191706-01a270bcb4b789546f52e5e487033465.json", {cache: 'no-cache'})
+    fetch("https://bacit.info/hwr/20221114150727-1d3261c7fae3e5427402e08e4068c12a.json", {cache: 'no-cache'})
     .then(response => response.json())
     .then(data => {
         console.log(data);
 
-        var X = 300 + parseInt(data.firstSlider, 10)*4;
+        var X = 300 + parseInt(data.moNa, 10)*4;
         var Y = 150;
         var R = 10;
         ctx.beginPath();
@@ -684,8 +1006,8 @@ ctx.stroke();
         ctx.strokeStyle = "white";
         ctx.stroke();
         ctx.closePath();
-        
-        var X = 300 + parseInt(data.secondSlider, 10)*4;
+
+        var X = 300 + parseInt(data.alTe, 10)*4;
         var Y = 250;
         var R = 10;
         ctx.beginPath();
@@ -697,8 +1019,104 @@ ctx.stroke();
         ctx.stroke();
         ctx.closePath();
 
-        var X = 300 + parseInt(data.thirdSlider, 10)*4;
+        var X = 300 + parseInt(data.alPo, 10)*4;
         var Y = 350;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.snVi, 10)*4;
+        var Y = 450;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.snTe, 10)*4;
+        var Y = 550;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.plFo, 10)*4;
+        var Y = 650;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.riTe, 10)*4;
+        var Y = 750;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "organge";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.faFl, 10)*4;
+        var Y = 850;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.noKo, 10)*4;
+        var Y = 950;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.aB, 10)*4;
+        var Y = 1050;
+        var R = 10;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
+
+        var X = 300 + parseInt(data.avAlko, 10)*4;
+        var Y = 1150;
         var R = 10;
         ctx.beginPath();
         ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
@@ -710,6 +1128,7 @@ ctx.stroke();
         ctx.closePath();
     });
 
+   
     // Funksjon til knapp for å legge til ny data
 
     btnData.onclick=function () {
@@ -723,9 +1142,9 @@ ctx.stroke();
                 document.querySelector("#info").innerText = "- Info om deg -" + "\nFornavn: " + data.fname + "\nEtternavn: " + data.lname + "\nE-post: " + data.email + "\nAlder: " + data.age;
 
                 ctx.fillStyle = "white";
-                ctx.fillText(data.fname + " " + data.lname, 400, 750,);
-                var X = 370;
-                var Y = 740;
+                ctx.fillText(data.fname, 48, 237);
+                var X = 30;
+                var Y = 230;
                 var R = 10;
                 ctx.beginPath();
                 ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
@@ -736,7 +1155,7 @@ ctx.stroke();
                 ctx.stroke();
                 ctx.closePath();
 
-                var X = 300 + parseInt(data.firstSlider, 10)*4;
+                var X = 300 + parseInt(data.moNa, 10)*4;
                 var Y = 150;
                 var R = 10;
                 ctx.beginPath();
@@ -748,7 +1167,7 @@ ctx.stroke();
                 ctx.stroke();
                 ctx.closePath();
 
-                var X = 300 + parseInt(data.secondSlider, 10)*4;
+                var X = 300 + parseInt(data.alTe, 10)*4;
                 var Y = 250;
                 var R = 10;
                 ctx.beginPath();
@@ -760,8 +1179,104 @@ ctx.stroke();
                 ctx.stroke();
                 ctx.closePath();
 
-                var X = 300 + parseInt(data.thirdSlider, 10)*4;
+                var X = 300 + parseInt(data.alPo, 10)*4;
                 var Y = 350;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.snVi, 10)*4;
+                var Y = 450;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.snTe, 10)*4;
+                var Y = 550;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.plFo, 10)*4;
+                var Y = 650;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.riTe, 10)*4;
+                var Y = 750;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.faFl, 10)*4;
+                var Y = 850;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.noKo, 10)*4;
+                var Y = 950;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.aB, 10)*4;
+                var Y = 1050;
+                var R = 10;
+                ctx.beginPath();
+                ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "white";
+                ctx.stroke();
+                ctx.closePath();
+
+                var X = 300 + parseInt(data.avAlko, 10)*4;
+                var Y = 1150;
                 var R = 10;
                 ctx.beginPath();
                 ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
