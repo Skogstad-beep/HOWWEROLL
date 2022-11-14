@@ -237,6 +237,12 @@ footer img {
         text-align: center;
         }
 
+        .sliderClass {
+          background: rgb(197, 196, 196);
+          border-radius: 10px;
+          width: 40%;
+          margin: auto;
+        }
     </style>
 
 </head>
@@ -244,7 +250,7 @@ footer img {
   <div class="header">UiA Prosjekt ⇢ Felles-skapet</div>
   <div class="topnav">
     <a href="index.html">Forside</a>
-    <a class="active" href="howweroll.html">HowWeRoll</a>
+    <a class="active" href="howweroll.html">HWR Skjema</a>
     <a href="hwr-report.html">HWR Rapport</a>
     <a href="ourgroup.html">Om oss</a>
     <a href="https://github.com/Skogstad-beep/HOWWEROLL">GitHub HWR</a>
@@ -292,33 +298,85 @@ footer img {
         <label><input type="checkbox" name="hobbies" value="music" checked>Musikk</label>
       </div></p>
       -->
-    <h2>Hva er du?</h2>
-    <p>
-      <label for="firstSlider">Noob</label>
-      <input type="range" id="firstSlider" name="firstSlider" value="50" class="slider">
-      <label for="firstSlider">Kodeguru</label>
-    </p>
-    <p>
-      <label for="secondSlider">A-menneske</label>
-      <input type="range" id="secondSlider" name="secondSlider" value="50" class="slider">
-      <label for="secondSlider">B-menneske</label>
-    </p>
-    <p>
-      <label for="thirdSlider">Avholds</label>
-      <input type="range" id="thirdSlider" name="thirdSlider" value="50" class="slider">
-      <label for="thirdSlider">Alkoholiker</label>
-    </p>
+    <h2>Ranger deg selv</h2>
+    <div class="sliderClass">
+    <p>Er du en <b>morgenfugl</b> eller en <b>natteravn?</b></p>
+      <label for="moNa">Morgenfugl</label>
+      <input type="range" id="moNa" name="moNa" value="50" class="slider">
+      <label for="moNa">Natteravn</label>
+    </div>
+    <div class="sliderClass">
+    <p>Liker du å jobbe <b>alene</b> eller i <b>team?</b></p>
+      <label for="alTe">Jobbe alene</label>
+      <input type="range" id="alTe" name="alTe" value="50" class="slider">
+      <label for="alTe">Jobbe i team</label>
+    </div>
+    <div class="sliderClass">
+    <p>Må du vite <b>alt</b> eller er du <b>foretrekker du å komme rett til poenget?</b></p>
+      <label for="alPo">Må vite alt</label>
+      <input type="range" id="alPo" name="alPo" value="50" class="slider">
+      <label for="alPo">Kom til poenget</label>
+    </div>
+    <div class="sliderClass">
+    <p>Foretekker du å <b>snakke ut om ting</b> eller vil <b>komme deg videre?</b></p>
+      <label for="snVi">Snakke ut</label>
+      <input type="range" id="snVi" name="snVi" value="50" class="slider">
+      <label for="snVi">Komme seg videre</label>
+    </div>
+    <div class="sliderClass">
+    <p>Er du en person som <b>snakker før man tenker</b> eller <b>tenker før man snakker?</b></p>
+      <label for="snTe">Snakker før man tenker</label>
+      <input type="range" id="snTe" name="snTe" value="50" class="slider">
+      <label for="snTe">Tenker før man snakker</label>
+    </div>
+    <div class="sliderClass">
+    <p>Foretrekker du at folk <b>planlegger når de trenger deg</b> eller <b>kan du bli forstyrret til en hver tid?</b></p>
+      <label for="plFo">Planlegg et møte hvis du trenger meg</label>
+      <input type="range" id="plFo" name="plFo" value="50" class="slider">
+      <label for="plFo">Forstyrr meg når du trenger meg</label>
+    </div>
+    <div class="sliderClass">
+    <p>Foretrekker du å <b>ringe</b> eller <b>tekste?</b></p>
+      <label for="riTe">Ringe</label>
+      <input type="range" id="riTe" name="riTe" value="50" class="slider">
+      <label for="riTe">Tekste</label>
+    </div>
+    <div class="sliderClass">
+    <p>Foretekker du <b>fast-</b> eller <b>fleksibel arbeidstid?</b></p>
+      <label for="faFl">Fast</label>
+      <input type="range" id="faFl" name="faFl" value="50" class="slider">
+      <label for="faFl">Fleksibel</label>
+    </div>
+    <div class="sliderClass">
+    <p>Anser du seg selv som <b>noob</b> eller <b>kodeguru</b> i koding?</p>
+      <label for="noKo">Noob</label>
+      <input type="range" id="noKo" name="noKo" value="50" class="slider">
+      <label for="noKo">Kodeguru</label>
+    </div>
+    <div class="sliderClass">
+    <p>Er du et <b>A-menneske</b> eller <b>B-menneske?</b></p>
+      <label for="aB">A-menneske</label>
+      <input type="range" id="aB" name="aB" value="50" class="slider">
+      <label for="aB">B-menneske</label>
+    </div>
+    <div class="sliderClass">
+    <p>Anser du seg selv som <b>avholds</b> eller <b>alkoholiker?</b></p>
+      <label for="avAlko">Avholds</label>
+      <input type="range" id="avAlko" name="avAlko" value="50" class="slider">
+      <label for="avAlko">Alkoholiker</label>
+    </div>
+    <br>
     <button type="submit" id="btnLagre">Lagre</button>
   </form>
 
     <br><br>
 
     <div class="id">
-      Kopier id: <input type="text" value="timetrxid" id="timetrxidCOPY" style="width: 400px">
+      Kopier ID: <input type="text" value="timetrxid" id="timetrxidCOPY" style="width: 400px">
     </div>
 
     <div class="results">
-      <h2>Form Data</h2>
+      <h2>Data i json-format:</h2>
       <pre></pre>
     </div>
 

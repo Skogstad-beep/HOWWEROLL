@@ -1,5 +1,5 @@
 # HOW WE ROLL
-Project, IS-114. Created by 5B.
+Project, IS-114. Created by group 5B.
 Hva skal leveres?
 1) URL-en til gruppens Github repository i Canvas.
 2) HOVEDRAPPORT som en (OBS! kun en fil) PDF-fil; dere kan selv velge hvilke av de
